@@ -34,6 +34,10 @@ public class CardGameICE1
            c.setSuits(random);
            magicHand[i]=c;//saving object in array
         }
+        
+        for(Card result: magicHand){
+            System.out.println(result);
+        }
     
         System.out.println("Value: ");
         int value=input.nextInt();
