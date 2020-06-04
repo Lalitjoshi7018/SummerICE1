@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package cardgameice1;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  *
@@ -19,18 +22,32 @@ public class CardGameICE1
      */
     public static void main(String[] args)
     {
+        Scanner input= new Scanner(System.in);
+        String suits[]= Card.SUITS;
+        String random= (Card.SUITS[new Random().nextInt(Card.SUITS.length)]);
         // code to generate 7 random cards and store in array
         Card[] magicHand = new Card[7];//array of object
         for (int i=0;i<magicHand.length;i++)
         {
            Card c= new Card();//object
-         //  c.setValue(method to generate random value from 1 to 13);
-         //  c.setSuits(method random suits);
+           c.setValue((int)(1+Math.random()*13));
+           c.setSuits(random);
            magicHand[i]=c;//saving object in array
         }
-    //take input from user and compare with array 
-   // value=
-       //     suit =
+    
+        System.out.println("Value: ");
+        int value=input.nextInt();
+        
+        System.out.println("Suit: ");
+        String suit=input.next();
+        
+        if((Arrays.binarySearch(suits, suit))==0){
+            System.out.println("Your selection is not apart of the "
+                    + "generated cards");
+        }else{
+            System.out.println("It is a part of the generated pack");
+        }
+
     
     }
     
