@@ -5,6 +5,8 @@
  */
 package cardgameice1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author srinivsi 
@@ -24,11 +26,34 @@ public class CardGameICE1
         for (int i=0;i<magicHand.length;i++)
         {
            Card c= new Card();//object
-         //  c.setValue(method to generate random value from 1 to 13);
-         //  c.setSuits(method random suits);
+           c.setValue(c.randomValue());
+           c.setSuits(c.Suits[c.generateRandom()]);
            magicHand[i]=c;//saving object in array
+           System.out.println(magicHand[i].getSuits() + "  "  + magicHand[i].getValue());
         }
     //take input from user and compare with array 
+      Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the value for card :");
+       int valuecard = sc.nextInt();
+       System.out.println("Enter the suit :");
+       String suitcard = sc.next();
+       
+       boolean compare = false;
+       
+       for(int i =0; i<magicHand.length ; i++){
+       
+       if( (valuecard == magicHand[i].getValue()) && (suitcard.equals(magicHand[i].getSuits()))){
+           
+           compare = true;
+       }
+       }
+       
+       if(compare == true){
+            System.out.println("Your card is in array");
+       }
+       else
+            System.out.println("Your card is not in array");
+       
   
     
     }
