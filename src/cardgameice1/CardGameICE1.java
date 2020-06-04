@@ -7,7 +7,7 @@ package cardgameice1;
 
 /**
  *
- * @author srinivsi
+ * @author srinivsi 
  print 7 cards (values,suits) and takes input 
  then prints if matching card is found in an array
  */
@@ -29,8 +29,7 @@ public class CardGameICE1
            magicHand[i]=c;//saving object in array
         }
     //take input from user and compare with array 
-   // value=
-       //     suit =
+  
     
     }
     

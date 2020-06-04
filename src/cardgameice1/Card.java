@@ -23,7 +23,6 @@ public static final String[] SUITS={"diamonds","clubs","spades","hearts"};
         return suits;
     }
 
-    
     public void setSuits(String suits) {
         this.suits = suits;
     }
@@ -37,9 +36,5 @@ public static final String[] SUITS={"diamonds","clubs","spades","hearts"};
     public void setValue(int value) {
         this.value = value;
     }
-//public int randomValue()
-//{
-    //int value= // 
-           // return value;
-//}
+
 }
