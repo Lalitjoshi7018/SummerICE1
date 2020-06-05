@@ -13,6 +13,7 @@ package ca.sheridancollege.week3.softwarefundamentals.ice1;
  * This code is to be used in ICE1. When you create your own branch,
  *modifier : Gurjot Kaur
  Student id: 991586964
+ Student id:991586964
  * @author srinivsi
  */
 public class Card {
