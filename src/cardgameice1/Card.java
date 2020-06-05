@@ -37,7 +37,7 @@ public class Card {
     }
 
     public int randomValue(){
-        int value = (int)(Math.random()*10);
+        int value = (int)(Math.random()*13);
         return value;
     }
     
