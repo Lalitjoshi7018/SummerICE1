@@ -8,8 +8,8 @@ import java.util.Scanner;
 /**
  *
  * @author srinivsi
- *  @modifier Abhishek Abhishek
- Student ID - 991587950
+ *  @modifier Simarjit Kaur
+ Student ID - 991587985
  print 7 cards (values,suits) and takes input 
  then prints if matching card is found in an array
  */
