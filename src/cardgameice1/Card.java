@@ -5,19 +5,21 @@
  */
 package cardgameice1;
 
+import java.util.Random;
+
 /**
  *
  * @author srinivsi
  
  private variable then refactor it
- * - encapsulate fields (encapsulation principle) 
- getters/setters
+ * - encapsulate fields (encapsulation principle) getters/setters
  */
 public class Card 
 {
   private String suits;//diamonds,clubs,spades, hearts
   private int value; // 1 to 13
-  public static final String[] SUITS={"diamonds","clubs","spades","hearts"};
+  public static final String[] SUITS={"Diamonds","Clubs","Spades","Hearts"};
+  
     
     public String getSuits() {
         return suits;
@@ -44,4 +46,18 @@ public class Card
         return value;
     }
     
+     public static String randomSuit(String[] SUITS){
+        String random= (SUITS[new Random().nextInt(SUITS.length)]);
+        return random;
+    }
+    
+     /*public static Card printArray(Card[] SUITS ){
+        Card elements= new Card();
+        for(Card content: SUITS){
+           elements= elements + content;
+        }
+        
+        return elements;
+    }*/
+     
 }
