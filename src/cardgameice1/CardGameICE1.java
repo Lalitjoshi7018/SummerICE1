@@ -24,6 +24,7 @@ public class CardGameICE1
     {
         Scanner input= new Scanner(System.in);
         String suits[]= Card.SUITS;
+        boolean tester= true;
         
         // code to generate 7 random cards and store in array
         Card[] magicHand = new Card[7];//array of object
@@ -34,27 +35,36 @@ public class CardGameICE1
            c.setValue((int)(1+Math.random()*13));
            c.setSuits(random);
            magicHand[i]=c;
-           
+          
           System.out.print(c.getSuits());
           System.out.print(" ");
-          System.out.println(c.getValue());
-          
+          System.out.println(c.getValue());    
         }
+        
+        Card guess=new Card();
         
         System.out.println("Value: ");
         int value=input.nextInt();
+        guess.setValue(value);
         
         System.out.println("Suit: ");
         String suit=input.next();
+        guess.setSuits(suit);
         
-        if(((Arrays.binarySearch(magicHand, suit))==0)){
-            System.out.println("Your selection is not apart of the "
-                    + "generated cards");
-        }else{
-            System.out.println("It is a part of the generated pack");
+        for (Card magicHand1 : magicHand) {
+            if (magicHand1.getValue() == guess.getValue() && magicHand1.getSuits().equalsIgnoreCase(guess.getSuits())) {
+                tester=true;
+                break;
+            }
+            tester=false;
         }
-
-    
+        
+        if(tester){
+            System.out.println("I guessed your card!!!");
+        }
+        else {
+            System.out.println("Oh no! I didn't guess your card");
+        }
     }
     
 }

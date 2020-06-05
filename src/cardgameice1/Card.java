@@ -5,6 +5,7 @@
  */
 package cardgameice1;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -16,9 +17,10 @@ import java.util.Random;
  */
 public class Card 
 {
-  private String suits;//diamonds,clubs,spades, hearts
-  private int value; // 1 to 13
-  public static final String[] SUITS={"Diamonds","Clubs","Spades","Hearts"};
+    private String suits;//diamonds,clubs,spades, hearts
+    private int value; // 1 to 13
+    public static final String[] SUITS={"Diamonds","Clubs","Spades","Hearts"};
+    boolean elements;
   
     
     public String getSuits() {
@@ -51,13 +53,9 @@ public class Card
         return random;
     }
     
-     /*public static Card printArray(Card[] SUITS ){
-        Card elements= new Card();
-        for(Card content: SUITS){
-           elements= elements + content;
-        }
-        
-        return elements;
-    }*/
+     public static int binarySearch(String suits){
+         int index= Arrays.binarySearch(SUITS, suits );
+         return index;
+     }
      
 }
