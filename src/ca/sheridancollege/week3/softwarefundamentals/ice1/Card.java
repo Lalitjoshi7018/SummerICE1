@@ -27,10 +27,6 @@ public class Card {
     public String getSuit() {
         return suit;
     }
-
-    /**
-     * @param suit the suit to set
-     */
     public void setSuit(String suit) {
         this.suit = suit;
     }
@@ -48,7 +44,18 @@ public class Card {
     public void setValue(int value) {
         this.value = value;
     }
-   // insert two methods to generate random value and suit here
-   
-    
+ 
+ public String  RandomSuits(){
+             int rand=(int) ( Math.random() * 4);
+             return SUITS[rand];
+    }
+    public int RandomNo(){
+    int  rando=(int) (1+ Math.random() * 13);
+    return rando;
+    }
+
+    @Override
+    public String toString() {
+        return  suit + " " + value;
+    }
 }
