@@ -37,9 +37,17 @@ public static final String[] SUITS={"diamonds","clubs","spades","hearts"};
     public void setValue(int value) {
         this.value = value;
     }
-//public int randomValue()
-//{
-    //int value= // 
-           // return value;
-//}
+    public String randomSuit(){
+    int random =    (int) (Math.random() * 4);
+    String randomSuit = SUITS[random];
+    return randomSuit;
+    }
+    public int randomValue(){
+    int random = 1 + (int)(Math.random() * 13);
+    return random;
+    }
+    @Override
+    public String toString(){
+    return suits + " " +value ;
+    }
 }
