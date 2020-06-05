@@ -8,8 +8,8 @@ import java.util.Random;
 /**
  *
  * @author srinivsi
- * @modifier Abhishek Abhishek 
- * Student ID - 991587950
+ * @modifier sonaldeep
+ * Student ID - 991586005
  private variable then refactor it
  * - encapsulate fields (encapsulation principle) 
  getter/setters
@@ -20,11 +20,11 @@ public class Card {
     private int value; // 1 to 13
     public static final String[] SUITS = {"diamonds", "clubs", "spades", "hearts"};
 
-    public String getSuits() {
+    public String getSuit() {
         return suits;
     }
 
-    public void setSuits(String suits) {
+    public void setSuit(String suits) {
         this.suits = suits;
     }
 
@@ -36,9 +36,15 @@ public class Card {
         this.value = value;
     }
 
-    public int randomValue(int low, int high) {
-        Random r = new Random();
-        int value = r.nextInt(high - low) + low;
+    public int randomValue(){
+        int value = (int)(Math.random()*10);
         return value;
     }
-}
+    
+    
+    public int generateRandom(){
+        int value = (int)(Math.random()*4);
+        return value;
+    }
+    }
+
