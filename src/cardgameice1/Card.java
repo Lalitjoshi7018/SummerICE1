@@ -36,9 +36,20 @@ public class Card {
         this.value = value;
     }
 
-    public int randomValue(int low, int high) {
-        Random r = new Random();
-        int value = r.nextInt(high - low) + low;
-        return value;
+      /**
+          * @return tag
+          */
+         public int randomValue()
+         {
+          int value = (int)(Math.random() *10);
+          return value;
+         }
+         public static final String[] Suits = {"Diamond", "Hearts", "Clubs", "Spades"};
+         
+           public int generateRandom()
+          {
+            int value = (int)(Math.random() *4);
+             return value;
+          }
     }
-}
+
