@@ -5,14 +5,14 @@
  */
 package cardgameice1;
 
-import java.util.Arrays;
-import java.util.Random;
 
 /**
  *
  * @author srinivsi
+ * @modifier Ashli Francis(fraashli)
+ * Date Modified: June 5, 2020
  
- private variable then refactor it
+ *private variable then refactor it
  * - encapsulate fields (encapsulation principle) getters/setters
  */
 public class Card 
