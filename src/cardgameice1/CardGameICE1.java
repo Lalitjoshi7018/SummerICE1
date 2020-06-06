@@ -36,15 +36,15 @@ public class CardGameICE1
         String suit = sc.next();
 
         boolean comparison = false;
-
+// boolean expression
         for (int x = 0; x < magicHand.length; x++) {
             if ((value == magicHand[x].getValue()) && (suit.equals(magicHand[x].getSuits()))) comparison = true;
         }
-
+//comparison of cards
         if (comparison == true) {
-            System.out.println("Your card is now in magic hand of Random Cards");
+            System.out.println("s now your card is in magic hand of Random Cards");
         } else
-            System.out.println("Sorry  the card is not present !!!");
+            System.out.println("ops the card is not present !!!");
     }
 
 }
