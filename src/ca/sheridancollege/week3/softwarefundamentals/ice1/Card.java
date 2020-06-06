@@ -5,6 +5,8 @@
  */
 package ca.sheridancollege.week3.softwarefundamentals.ice1;
 
+import java.util.Random;
+
 /**
  * A class that models playing card Objects. Cards have 
  * a value (note that Ace = 1, Jack -11, Queen =12, King = 13)
@@ -16,39 +18,31 @@ package ca.sheridancollege.week3.softwarefundamentals.ice1;
  * Name:- Kirandeep Kirandeep
  */
 public class Card {
+    
+    private String suit;//diamonds,clubs,spades, hearts
+    private int v; // 1 to 13
+    public static final String[] SUITS = {"diamonds", "clubs", "spades", "hearts"};
 
-   private String suit; //clubs, spades, diamonds, hearts
-   private int value;//1-13
-
-   public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
-    /**
-     * @return the suit
-     */
-    public String getSuit() {
+    public String getSuits() {
         return suit;
     }
 
-    /**
-     * @param suit the suit to set
-     */
-    public void setSuit(String suit) {
+    public void setSuits(String suits) {
         this.suit = suit;
     }
 
-    /**
-     * @return the value
-     */
     public int getValue() {
-        return value;
+        return v;
     }
 
-    /**
-     * @param value the value to set
-     */
-    public void setValue(int value) {
-        this.value = value;
+    public void setValue(int v) {
+        this.v = v;
     }
-   // insert two methods to generate random value and suit here
-   
-    
+
+    public int randomValue(int low, int high) {
+        Random r = new Random();
+        int value;
+        value = r.nextInt(high - low) + low;
+        return value;
+    }
 }

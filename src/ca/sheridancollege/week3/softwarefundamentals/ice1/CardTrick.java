@@ -4,29 +4,44 @@
  * and open the template in the editor.
  */
 package ca.sheridancollege.week3.softwarefundamentals.ice1;
-
+import java.util.Scanner;
 /**
- * A class that fills a magic hand of 7 cards with random Card Objects
- * and then asks the user to pick a card and searches the array of cards
- * for the match to the user's card. To be used as starting code in ICE 1
- * @author srinivsi
+ *
+ * @author Kirandeep
+
+ print 7 cards (values,suits) and takes input 
+ then prints if matching card is found in an array
  */
-public class CardTrick {
-    
-    public static void main(String[] args)
-    {
-        Card[] magicHand = new Card[7];
-        
-        for (int i=0; i<magicHand.length; i++)
-        {
-            Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+public class CardTrick
+{
+
+    public static void main(String[] args) {
+        // code to generate 7 random cards and store in array
+        Card[] magicHand = new Card[7];//array of object
+        for (int i = 0; i < magicHand.length; i++) {
+            Card c = new Card ();//object
+            c.setValue(c.randomValue(1, 13)); // method to generate random value
+            c.setSuits(c.SUITS[c.randomValue(0, 3)]); // method for random suits
+            magicHand[i] = c;     //saving the object in array
         }
-        
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here to find matching card is in array or not
-        //Then report the result here
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter any card");
+        int value = sc.nextInt();
+        System.out.println("Enter any Suit");
+        String suit = sc.next();
+
+        boolean comp = false;
+
+        for (int i = 0; i < magicHand.length; i++) {
+            if ((value == magicHand[i].getValue()) && (suit.equals(magicHand[i].getSuits()))) 
+                comp = true;
+        }
+
+        if (comp == true) {
+            System.out.println("Your card is in magic hand of Random Cards !!!");
+        } else
+            System.out.println("Sorry card is not present !!!");
     }
-    
+
 }
