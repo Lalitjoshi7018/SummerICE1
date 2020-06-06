@@ -85,7 +85,7 @@ public class CardGameICE1 {
         }
         if(luck == 0)
         {
-            System.out.println("You Loose... Lucky Card is NOT in Magic Hands");
+            System.out.println("You Loose... Lucky Card is NOT in a Magic Hands");
         }
     }
     
