@@ -41,7 +41,7 @@ public class Card {
         return value;
     }
     
-    
+    //generating random number
     public int generateRandom(){
         int value = (int)(Math.random()*4);
         return value;
