@@ -10,7 +10,8 @@ import java.util.Random;
 /**
  *
  * @author srinivsi
- * @Modifier zarna shethwala Student Number : 991583435
+ * @Modifier zarna shethwala 
+   Student Id : 991583435
  *
  * private variable then refactor it - encapsulate fields (encapsulation
  * principle) getters/setters
