@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package cardgameice1;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,24 +29,24 @@ public class CardGameICE1
         Card[] magicHand = new Card[7];//array of object
         for (int i=0;i<magicHand.length;i++)
         {
-           String random= (suits[new Random().nextInt(suits.length)]);
-           Card c= new Card();
-           c.setValue((int)(1+Math.random()*13));
-           c.setSuits(random);
-           magicHand[i]=c;
+            String random= (suits[new Random().nextInt(suits.length)]);
+            Card c= new Card();
+            c.setValue((int)(1+Math.random()*13));
+            c.setSuits(random);
+            magicHand[i]=c;
           
-          System.out.print(c.getSuits());
-          System.out.print(" ");
-          System.out.println(c.getValue());    
+            System.out.println(c.getSuits()+" "+c.getValue());
+                       
         }
         
         Card guess=new Card();
         
-        System.out.println("Value: ");
+        System.out.println();
+        System.out.print("Value: ");
         int value=input.nextInt();
         guess.setValue(value);
         
-        System.out.println("Suit: ");
+        System.out.print("Suit: ");
         String suit=input.next();
         guess.setSuits(suit);
         
@@ -60,11 +59,14 @@ public class CardGameICE1
         }
         
         if(tester){
-            System.out.println("I guessed your card!!!");
+            System.out.println("I guessed your card!!! "+guess.getValue()+" of "+guess.getSuits()+".");
+            
         }
         else {
-            System.out.println("Oh no! I didn't guess your card");
+            System.out.println("Oh no! I didn't guess your card.");
         }
+        
+        
     }
     
 }

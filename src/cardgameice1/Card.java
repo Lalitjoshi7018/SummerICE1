@@ -41,21 +41,5 @@ public class Card
     public void setValue(int value) {
         this.value = value;
     }
-    
-    public int randomValue()
-    {
-        int value= (int)(1+Math.random()*13);
-        return value;
-    }
-    
-     public static String randomSuit(String[] SUITS){
-        String random= (SUITS[new Random().nextInt(SUITS.length)]);
-        return random;
-    }
-    
-     public static int binarySearch(String suits){
-         int index= Arrays.binarySearch(SUITS, suits );
-         return index;
-     }
      
 }
