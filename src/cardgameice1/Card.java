@@ -9,7 +9,8 @@ package cardgameice1;
 /**
  *
  * @author srinivsi
- 
+ * @modifier Ashli Francis(fraashli; 991590167)
+ * Date Modified: June 5, 2020
  *private variable then refactor it
  * - encapsulate fields (encapsulation principle) getters/setters
  */
