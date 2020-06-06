@@ -5,46 +5,88 @@
  */
 package cardgameice1;
 import java.util.Scanner;
-/**
- *
- * @author srinivsi
- *  @modifier Abhishek Abhishek
- Student ID - 991587950
- print 7 cards (values,suits) and takes input 
- then prints if matching card is found in an array
- */
-public class CardGameICE1
-{
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // code to generate 7 random cards and store in array
-        Card[] magicHand = new Card[7];//array of object
-        for (int i = 0; i < magicHand.length; i++) {
-            Card c = new Card ();//object
-            c.setValue(c.randomValue(1, 13)); // method to generate random value from 1 to 13
-            c.setSuits(c.SUITS[c.randomValue(0, 3)]); // method random suits generating 0 to 3 for array
-            magicHand[i] = c;     //saving object in array
+public class CardGameICE1 {
+    
+    public static void main(String[] args)
+    {
+        Card[] magicHand = new Card[7];
+        
+        for (int i=0; i<magicHand.length; i++)
+        {
+            Card c = new Card();
+            //c.setValue(insert call to random number generator here)
+            c.setValue((int)((Math.random()*13)+1));
+            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+             c.setSuit(Card.SUITS[(int)(Math.random()*3)]);
+         magicHand[i] = c;
         }
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter any card");
-        int value = sc.nextInt();
-        System.out.println("Enter any Suit");
-        String suit = sc.next();
-
-        boolean comparison = false;
-
-        for (int i = 0; i < magicHand.length; i++) {
-            if ((value == magicHand[i].getValue()) && (suit.equals(magicHand[i].getSuits()))) comparison = true;
+        
+        Scanner input = new Scanner(System.in);
+        
+        
+        //insert code to ask the user for Card value and suit, create their card
+         System.out.println("Welcome to Card guessing game!");
+        System.out.println("\nGuess the card number - 1 to 13");
+        int guessValue = input.nextInt();
+        
+        System.out.println("\nGuess the suit of card - Spades, Diamonds, Clubs, Hearts");
+        String guessSuit = input.next();
+        
+        Card guess = new Card();
+        
+        guess.setValue(guessValue);
+        
+        guess.setSuit(guessSuit);
+        
+        // and search magicHand here to find matching card is in array or not
+        int guessCard = 0;
+        for(int i=0;i<magicHand.length;i++)
+        {
+            if((guess.getValue() == magicHand[i].getValue()) && 
+                    (guess.getSuit().equalsIgnoreCase(magicHand[i].getSuit())))
+            {
+                guessCard=1;
+                System.out.println("\nyes! Your card is in Magic cards");
+                break;
+            }
+            
         }
-
-        if (comparison == true) {
-            System.out.println("Your card is in magic hand of Random Cards !!!");
-        } else
-            System.out.println("Sorry card is not present !!!");
+        if(guessCard == 0)
+        {
+            System.out.println("\nno! Your card is not in Magic cards");
+        }
+        
+        
+        Card luckyCard = new Card();
+        
+        luckyCard.setValue(4);
+        
+        luckyCard.setSuit("Spades");
+        
+        int luck = 0;
+        
+        for(int i = 0; i < magicHand.length; i++)
+        {
+            if((luckyCard.getValue() == magicHand[i].getValue()) && 
+                    (luckyCard.getSuit().equalsIgnoreCase(magicHand[i].getSuit())))
+            {
+                luck = 1;
+            }
+            else
+            {
+                luck = 0;
+            }
+        }
+        //Then report the result here
+        
+   if(luck == 1)
+        {
+            System.out.println("You Win!! Lucky Card is in Magic Hands");
+        }
+        if(luck == 0)
+        {
+            System.out.println("You Loose... Lucky Card is NOT in Magic Hands");
+        }
     }
-
+    
 }

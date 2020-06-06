@@ -14,31 +14,49 @@ import java.util.Random;
  * - encapsulate fields (encapsulation principle) 
  getter/setters
  */
+import java.util.Random;
 public class Card {
-    
-    private String suits;//diamonds,clubs,spades, hearts
-    private int value; // 1 to 13
-    public static final String[] SUITS = {"diamonds", "clubs", "spades", "hearts"};
 
-    public String getSuits() {
-        return suits;
+   private String suit; //clubs, spades, diamonds, hearts
+   private int value;//1-13
+
+   public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
+   public static final String [] Rank = {"Ace", "2" , "3" , "4", "5" , "6","7" , "8" ,"9", "10", "Jack", "Queen", "King"};
+   
+    /**
+     * @return the suit
+     */
+    public String getSuit() {
+        return suit;
     }
 
-    public void setSuits(String suits) {
-        this.suits = suits;
+    /**
+     * @param suit the suit to set
+     */
+    public void setSuit(String suit) {
+        this.suit = suit;
     }
 
+    /**
+     * @return the value
+     */
     public int getValue() {
         return value;
     }
 
+    /**
+     * @param value the value to set
+     */
     public void setValue(int value) {
         this.value = value;
     }
-
-    public int randomValue(int low, int high) {
-        Random r = new Random();
-        int value = r.nextInt(high - low) + low;
-        return value;
+   // insert two methods to generate random value and suit here
+    public int shuffle (int n, int m){
+       Random r = new Random();
+       int value = r.nextInt(m-n) + n;
+       return value;
+        }
     }
-}
+   
+    
+
