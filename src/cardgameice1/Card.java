@@ -36,9 +36,9 @@ public class Card {
         this.value = value;
     }
 
-    public int randomValue(int low, int high) {
+    public int randomValue(int first, int second) {
         Random r = new Random();
-        int value = r.nextInt(high - low) + low;
+        int value = r.nextInt(second - first) + first;
         return value;
     }
 }
