@@ -38,6 +38,7 @@ public class CardGameICE1
         System.out.println("Enter the suit");
         String suit = sc.next();
         boolean compare = false;
+     //comparing the input
         for(int i=0; i<magicHand.length;i++){
             if((value==magicHand[i].getValue()) && (suit.equals(magicHand[i].getSuit()))){
                 compare = true;
